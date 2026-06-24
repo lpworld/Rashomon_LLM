@@ -1,0 +1,21 @@
+# ----- Core -----
+numpy
+pandas
+scikit-learn
+
+# ----- LLM client -----
+# OpenAI Python SDK: used as the client for Tinker's OpenAI-compatible endpoint (set the
+# base URL in the scripts) and for the optional GPT-4o in-context pilot.
+openai>=1.0
+
+# ----- LoRA fine-tuning (KuaiLive, Section 6) -----
+# Tinker + tinker-cookbook (Thinking Machines Lab), used only by rashomonllm_finetune.py and
+# rashomonllm_ft_epr.py. Distributed by Thinking Machines Lab (not public PyPI); install per
+# their instructions (https://thinkingmachines.ai):
+#   tinker
+#   tinker-cookbook
+
+# ----- Baselines (install as needed) -----
+xgboost
+torch
+tabpfn

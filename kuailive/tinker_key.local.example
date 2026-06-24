@@ -1,0 +1,8 @@
+# Tinker (Thinking Machines Lab) API key for the KuaiLive fine-tuning / inference (Section 6).
+#
+# >>> USE YOUR OWN KEY <<<
+# Copy this file to "tinker_key.local" in this directory and paste your own token below,
+# OR set the environment variable TINKER_API_KEY (which takes precedence).
+# The "*.local" suffix is git-ignored, so your key is never committed.
+
+YOUR_TINKER_API_KEY_HERE

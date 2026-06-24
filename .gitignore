@@ -1,0 +1,23 @@
+# ---- Secrets: NEVER commit API keys ----
+*.local
+*.key
+.env
+
+# ---- Data (obtain from the sources in data/README.md; do not redistribute) ----
+raw/
+**/analysis/*.csv
+**/train.csv
+*.npy
+
+# ---- Generated artifacts / logs / model pointers ----
+**/analysis/*.json
+**/analysis/*.jsonl
+**/analysis/*.log
+**/analysis/*.txt
+ft_sampler_path.txt
+ft_epr_sampler_path.txt
+
+# ---- Python ----
+__pycache__/
+*.pyc
+.ipynb_checkpoints/

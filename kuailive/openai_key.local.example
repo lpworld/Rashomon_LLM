@@ -1,0 +1,7 @@
+# OpenAI API key, used only if you run the in-context pilot with PILOT_PROVIDER=openai
+# (GPT-4o) instead of the default Tinker/Qwen backbone.
+#
+# >>> USE YOUR OWN KEY <<<
+# Copy this file to "openai_key.local" and paste your own key, OR set OPENAI_API_KEY (preferred).
+
+YOUR_OPENAI_API_KEY_HERE
