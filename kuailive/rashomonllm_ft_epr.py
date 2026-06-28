@@ -234,6 +234,19 @@ def main():
     if rationales is None:
         rationales = [json.loads(l)["rationale"] for l in open(RATIONALE_FILE, encoding="utf-8")][:len(train_df)]
 
+    # Placebo-rationale control (paper Section 6, Table tbl:kuaicomp): keep the genuine
+    # teacher rationales -- so output length and surface form are held fixed -- but shuffle
+    # them across instances so the rationale no longer tracks each exposure's true drivers.
+    # If accuracy with this placebo matches the predict-only model, the self-explanation gain
+    # comes from rationale FIDELITY, not from merely emitting reasoning-shaped tokens.
+    if os.environ.get("FT_EPR_PLACEBO", "0") == "1":
+        import random as _random
+        idx = list(range(len(rationales)))
+        _random.Random(_envi("FT_EPR_PLACEBO_SEED", 0)).shuffle(idx)
+        rationales = [rationales[j] for j in idx]
+        print(f"[placebo] shuffled {len(rationales)} rationales across instances "
+              f"(matched length/form, fidelity destroyed)")
+
     if STAGE in ("all", "finetune"):
         path = finetune(train_df, rationales)
     else:
